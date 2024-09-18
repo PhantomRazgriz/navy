@@ -1,27 +1,27 @@
 document.addEventListener('DOMContentLoaded', function() {
     const carousel = document.querySelector('.carousel');
+    const slides = carousel.querySelectorAll('.carousel-slide');
     const prevButton = document.querySelector('.carousel-button.prev');
     const nextButton = document.querySelector('.carousel-button.next');
-    const images = carousel.querySelectorAll('img');
-    let currentIndex = 0;
+    let currentSlide = 0;
 
     function updateCarousel() {
-        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
     }
 
-    prevButton.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
         updateCarousel();
-    });
+    }
 
-    nextButton.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % images.length;
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
         updateCarousel();
-    });
+    }
 
-    // Auto-play del carousel
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % images.length;
-        updateCarousel();
-    }, 5000);
+    prevButton.addEventListener('click', prevSlide);
+    nextButton.addEventListener('click', nextSlide);
+
+    // Opzionale: cambia slide automaticamente ogni 5 secondi
+    setInterval(nextSlide, 5000);
 });
