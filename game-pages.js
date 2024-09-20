@@ -25,3 +25,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Opzionale: cambia slide automaticamente ogni 5 secondi
     setInterval(nextSlide, 5000);
 });
+
+  // Gestione del menu mobile
+  menuToggle.addEventListener('click', function() {
+    mainNav.classList.toggle('open');
+    this.classList.toggle('active');
+});

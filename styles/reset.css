@@ -1,0 +1,89 @@
+/* reset.css per Delta Force MilSim Clan */
+
+/* Box sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* Reset margins and paddings */
+  body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Body defaults */
+  body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom, #000000, #0a0a0a);
+    color: #ffffff;
+  }
+  
+  /* Remove list styles on ul, ol elements */
+  ul, ol {
+    list-style: none;
+  }
+  
+  /* A elements that don't have a class get default styles */
+  a:not([class]) {
+    text-decoration-skip-ink: auto;
+  }
+  
+  /* Make images easier to work with */
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  
+  /* Inherit fonts for inputs and buttons */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /* Remove all animations and transitions for people that prefer not to see them */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  
+  /* Custom resets for specific elements used in the site */
+  header {
+    background-color: rgba(10, 10, 10, 0.8);
+  }
+  
+  nav ul {
+    display: flex;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Rajdhani', sans-serif;
+  }
+  
+  button {
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  
+  /* Reset for video container */
+  #video-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Reset for sections */
+  section {
+    margin-bottom: 2rem;
+  }
+  
+  /* Reset for footer */
+  footer {
+    background-color: rgba(5, 5, 5, 0.9);
+  }

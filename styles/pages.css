@@ -1,0 +1,163 @@
+/* pages.css per Delta Force MilSim Clan */
+
+/* Stili per la Home Page */
+.home-hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.home-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.home-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.home-hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.home-hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Chi Siamo Section */
+#chi-siamo .subsection {
+    margin-bottom: 3rem;
+}
+
+#chi-siamo .subsection:last-child {
+    margin-bottom: 0;
+}
+
+/* Sezioni Section */
+#sezioni {
+    background-color: rgba(15, 15, 15, 0.8);
+    padding: 4rem 0;
+}
+
+/* Requisiti Section */
+#requisiti ul {
+    background-color: rgba(255, 85, 0, 0.1);
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+/* Merchandise Section */
+#merchandise {
+    background-image: url('/images/merchandise-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 4rem 0;
+    position: relative;
+}
+
+#merchandise::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+#merchandise .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Stili per la pagina Arma 3 */
+.arma3-page .game-hero {
+    background-image: url('/images/ArmA_3_Screenshot_2024.09.02_-_19.23.14.27.png');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+}
+
+.arma3-page .game-description {
+    background-color: rgba(15, 15, 15, 0.8);
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+/* Stili per la pagina Squad */
+.squad-page .game-hero {
+    background-image: url('/images/squad-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+}
+
+.squad-page .game-description {
+    background-color: rgba(15, 15, 15, 0.8);
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .home-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .home-hero p {
+        font-size: 1.2rem;
+    }
+
+    #chi-siamo .subsection {
+        flex-direction: column;
+    }
+
+    .arma3-page .game-hero,
+    .squad-page .game-hero {
+        height: 40vh;
+    }
+}
+
+/* Animazioni per le pagine */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.5s ease-out;
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.slide-in-right {
+    animation: slideInRight 0.5s ease-out;
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}

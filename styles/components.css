@@ -1,0 +1,219 @@
+/* components.css per Delta Force MilSim Clan */
+
+/* Pulsanti */
+.btn {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #ff5500;
+    color: #000000;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #ff7733;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Widget Statistiche */
+.stats-widget {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(15, 15, 15, 0.95);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 0 20px rgba(255, 85, 0, 0.3);
+    color: #ffffff;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 85, 0, 0.5);
+    max-width: 300px;
+    width: auto;
+}
+
+.stats-widget.closed {
+    right: -320px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.stats-widget h3 {
+    color: #ff5500;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.stat-item {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.stat-label {
+    font-weight: bold;
+    margin-right: 10px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stat-value {
+    color: #ff5500;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Carosello */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    width: 100%;
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-button:hover {
+    background-color: rgba(255, 85, 0, 0.7);
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+/* Sezioni del gioco */
+.game-logo {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    background-color: #0a0a0a;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.game-logo img, .game-logo video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+}
+
+.game-logo video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.logo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.game-logo:hover {
+    width: 500px;
+    height: 400px;
+    box-shadow: 0 15px 30px rgba(255, 85, 0, 0.4);
+    transform: translateY(-10px);
+}
+
+.game-logo:hover img {
+    opacity: 0;
+}
+
+.game-logo:hover video {
+    opacity: 1;
+}
+
+.game-logo:hover .logo-overlay {
+    opacity: 1;
+}
+
+/* Menu Toggle per mobile */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.menu-toggle span {
+    width: 30px;
+    height: 3px;
+    background: #ffffff;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    
+    /* Aggiungi qui altri stili responsive per i componenti se necessario */
+}

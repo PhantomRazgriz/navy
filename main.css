@@ -1,0 +1,628 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Roboto:wght@400;700&display=swap');
+
+/* Stili di base */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom, #000000, #0a0a0a);
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* Header e navigazione */
+header {
+    background-color: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(5px);
+    padding: 0.5rem 1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo img {
+    max-height: 50px;
+    width: auto;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 1rem;
+}
+
+nav ul li a {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.5rem;
+    display: inline-block;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: #ff5500;
+}
+
+/* Contenitore video */
+#video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    perspective: 1000px;
+}
+
+#video-container video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%) translateZ(-50px);
+    z-index: -1;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.video-overlay h1 {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Pulsante reclutamento */
+#recruit-btn {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    background-color: #ff5500;
+    color: #000000;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#recruit-btn:hover {
+    background-color: #ff7733;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Layout principale */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Stili comuni per le sezioni */
+#chi-siamo, #sezioni, #requisiti, #operations {
+    background-color: rgba(15, 15, 15, 0.8);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    color: #ff5500;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ff5500;
+    padding-bottom: 0.5rem;
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Chi Siamo */
+#chi-siamo p, #requisiti li {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+#chi-siamo strong {
+    color: #ff5500;
+    font-weight: 700;
+}
+
+.chi-siamo-main, .subsection {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.subsection h3 {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    color: #ff5500;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.text-content, .image-content {
+    flex: 1;
+}
+
+.image-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image-right {
+    flex-direction: row;
+}
+
+.image-left {
+    flex-direction: row-reverse;
+}
+
+/* Sezioni */
+#sezioni {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.game-logos {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.game-logo {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    text-decoration: none;
+    background-color: #0a0a0a;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.game-logo img, .game-logo video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+}
+
+.game-logo video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.logo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.logo-overlay span {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    color: #fff;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.game-logo:hover {
+    width: 500px;
+    height: 400px;
+    box-shadow: 0 15px 30px rgba(255, 85, 0, 0.4);
+    transform: translateY(-10px);
+}
+
+.game-logo:hover img {
+    opacity: 0;
+}
+
+.game-logo:hover video {
+    opacity: 1;
+}
+
+.game-logo:hover .logo-overlay {
+    opacity: 1;
+}
+
+/* Requisiti */
+#requisiti ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#requisiti li {
+    position: relative;
+    padding-left: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+#requisiti li::before {
+    content: "•";
+    color: #ffd700;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(5, 5, 5, 0.9);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.social-icons {
+    margin-bottom: 1rem;
+}
+
+.social-icons a {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ff5500;
+}
+
+/* Effetto parallasse */
+@keyframes parallax {
+    0% { background-position: 0 0; }
+    100% { background-position: -100px 100px; }
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/images/noise-texture.svg');
+    opacity: 0.03;
+    z-index: -1;
+    animation: parallax 20s infinite linear;
+}
+
+/* Stili per le pagine dei giochi */
+.game-hero {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    margin-top: 60px;
+    position: relative;
+}
+
+.game-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.game-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 100%);
+}
+
+.game-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    align-items: center;
+}
+
+.game-description {
+    flex: 1;
+    min-width: 300px;
+}
+
+.game-description h1 {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    color: #ff5500;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ff5500;
+    padding-bottom: 0.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-container {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-height: 400px;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    width: 100%;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 10;
+}
+
+.carousel-button:hover {
+    background-color: rgba(255, 85, 0, 0.7);
+}
+
+.carousel-button.prev { left: 10px; }
+.carousel-button.next { right: 10px; }
+
+/* Widget statistiche */
+#stats-widget, #reopen-widget {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+#stats-widget {
+    background-color: rgba(15, 15, 15, 0.95);
+    border: 2px solid rgba(255, 85, 0, 0.5);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(255, 85, 0, 0.3);
+    color: #ffffff;
+    max-width: 250px;
+    width: auto;
+}
+
+#stats-widget.closed {
+    right: -270px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#stats-widget h3, #stats-widget .stat-value {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    color: #ff5500;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#stats-widget h3 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.stat-item {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.stat-label {
+    font-weight: bold;
+    margin-right: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    display: inline-block;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+#reopen-widget {
+    background-color: rgba(255, 85, 0, 0.9);
+    border-radius: 50%;
+    padding: 15px;
+    cursor: pointer;
+    display: none;
+    font-size: 24px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#reopen-widget.visible {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.menu-toggle span {
+    width: 30px;
+    height: 3px;
+    background: #ffffff;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+}
+
+/* Stili responsivi */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    .navbar {
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+    }
+
+    nav {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: rgba(10, 10, 10, 0.95);
+        width: 100%;
+        display: none;
+        padding: 1rem 0;
+    }
+    
+    nav.open {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li a {
+        width: 100%;
+        padding: 0.5rem 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .game-logos, .chi-siamo-main, .subsection {
+        flex-direction: column;
+    }
+
+    .game-logo {
+        width: 100%;
+        max-width: 300px;
+        height: 180px;
+    }
+
+    .game-logo:hover {
+        height: 240px;
+    }
+
+    #stats-widget {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-overlay h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .game-logo {
+        max-width: 250px;
+        height: 150px;
+    }
+
+    .game-logo:hover {
+        height: 200px;
+    }
+
+    #stats-widget {
+        max-width: 180px;
+    }
+}
