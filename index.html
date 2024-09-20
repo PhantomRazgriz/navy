@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delta Force MilSim Clan</title>
+    <title>Brigata Corvi Neri</title>
     <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -13,7 +13,12 @@
             <div class="logo">
                 <img src="images/logo.png" alt="Logo Delta Force MilSim Clan">
             </div>
-            <nav id="main-nav">
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav>
                 <ul>
                     <li><a href="#video-container">Home</a></li>
                     <li><a href="#chi-siamo">Chi Siamo</a></li>
@@ -22,17 +27,12 @@
                     <li><a href="#merchandise">Merchandise</a></li>
                 </ul>
             </nav>
-            <button class="menu-toggle" id="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </div>
     </header>
 
     <div id="video-container">
-        <video autoplay muted loop>
-            <source src="" type="video/mp4">
+        <video autoplay loop muted>
+            <source src="video/arma3.mp4" type="video/mp4">
             Il tuo browser non supporta il tag video.
         </video>
         <div class="video-overlay">
@@ -43,47 +43,47 @@
     </div>
 
     <main>
-        
-
         <section id="chi-siamo">
-            <h2>Chi Siamo</h2>
+            <h2>Brigata Corvi Neri</h2>
+        
             <div class="chi-siamo-main">
                 <div class="text-content">
+                    <h3>Chi Siamo</h3>
                     <p>La nostra community nasce nell'ottobre del 2019, con la voglia di creare una realtà unita e diversa dalle altre. Siamo una <strong>Multigaming</strong> con un regolamento interno che ne mantiene saldi i valori e che continua ad espandersi giorno dopo giorno. Abbiamo diverse sezioni in base ai videogiochi a cui ci dedichiamo.</p>
                 </div>
                 <div class="image-content">
                     <img src="images/carousel-inner/car7.png" alt="La nostra community">
                 </div>
             </div>
-            <div class="subsection-container">
-                <div class="subsection image-right">
-                    <div class="text-content">
-                        <h3>Il Clan</h3>
-                        <p>Nel clan ciò che conta di più è <strong>l'educazione</strong> e il <strong>rispetto delle regole</strong>. L'obiettivo è abbracciare la parte buona della community italiana ed evitare completamente la parte "tossica", immatura. La Brigata Corvi Neri è organizzata in gradi, ogni grado ha specifiche <strong>responsabilità</strong>, sia in gioco che nel clan stesso. Ci distacchiamo da qualunque realtà nociva della community italiana e, in generale, mettiamo al primo posto il <strong>divertimento</strong> derivato dal lavorare come un <strong>team professionale</strong>.</p>
-                    </div>
-                    <div class="image-content">
-                        <img src="images/carousel-inner/car4.jpg" alt="Il Clan">
-                    </div>
+        
+            <div class="subsection image-right">
+                <div class="text-content">
+                    <h3>Il Clan</h3>
+                    <p>Nel clan ciò che conta di più è <strong>l'educazione</strong> e il <strong>rispetto delle regole</strong>. L'obiettivo è abbracciare la parte buona della community italiana ed evitare completamente la parte "tossica", immatura. La Brigata Corvi Neri è organizzata in gradi, ogni grado ha specifiche <strong>responsabilità</strong>, sia in gioco che nel clan stesso. Ci distacchiamo da qualunque realtà nociva della community italiana e, in generale, mettiamo al primo posto il <strong>divertimento</strong> derivato dal lavorare come un <strong>team professionale</strong>.</p>
                 </div>
-                <div class="subsection image-left">
-                    <div class="image-content">
-                        <img src="images/carousel-inner/car1.jpg" alt="Lo Stile">
-                    </div>
-                    <div class="text-content">
-                        <h3>Lo Stile</h3>
-                        <p>Nei videogiochi tattici, la Multigaming adotta lo stile di gioco <strong>Mil-Sim</strong>, caratteristica che ci contraddistingue in assoluto. Immersività, gioco di squadra e <strong>simulazione</strong>, sono i cardini alla base del nostro approccio ai videogiochi.</p>
-                    </div>
+                <div class="image-content">
+                    <img src="images/carousel-inner/car4.jpg" alt="Il Clan">
+                </div>
+            </div>
+        
+            <div class="subsection image-left">
+                <div class="text-content">
+                    <h3>Lo Stile</h3>
+                    <p>Nei videogiochi tattici, la Multigaming adotta lo stile di gioco <strong>Mil-Sim</strong>, caratteristica che ci contraddistingue in assoluto. Immersività, gioco di squadra e <strong>simulazione</strong>, sono i cardini alla base del nostro approccio ai videogiochi.</p>
+                </div>
+                <div class="image-content">
+                    <img src="images/carousel-inner/car1.jpg" alt="Lo Stile">
                 </div>
             </div>
         </section>
 
-        <section id="sezioni" class="section">
+        <div id="sezioni" class="section">
             <h2>Sezioni</h2>
             <div class="game-logos">
                 <a href="arma3.html" class="game-logo">
                     <img src="images/games/arma.png" alt="Logo Arma 3">
-                    <video loop muted playsinline>
-                        <source src="video/＂We are Red Man＂ il primo Devgru Red Squadron in Italia ｜ Brigata Corvi Neri Milsim Team ｜ Arma 3.mp4" type="video/mp4">
+                    <video loop muted>
+                        <source src="video/arma3.mp4" type="video/mp4">
                     </video>
                     <div class="logo-overlay">
                         <span>Arma 3</span>
@@ -91,17 +91,17 @@
                 </a>
                 <a href="squad.html" class="game-logo">
                     <img src="images/games/squadd.png" alt="Logo Squad">
-                    <video loop muted playsinline>
-                        <source src="video/Brigata Corvi Neri Multigaming presenta： Trailer Sezione Squad 2024⧸2025.mp4" type="video/mp4">
+                    <video loop muted>
+                        <source src="video/squad.mp4" type="video/mp4">
                     </video>
                     <div class="logo-overlay">
                         <span>Squad</span>
                     </div>
                 </a>
             </div>
-        </section>
+        </div>
 
-        <section id="requisiti">
+        <div id="requisiti" class="section">
             <h2>Requisiti</h2>
             <ul>
                 <li>Età minima 21 anni.</li>
@@ -111,24 +111,24 @@
                 <li>Saper rispettare le regole e la gerarchia della Multigaming (Gradi e incarichi)</li>
                 <li>Attitudine alla disciplina milsim.</li>
             </ul>
-        </section>
+        </div>
 
-        <section id="merchandise" class="merchandise-section">
+        <div id="merchandise" class="section merchandise-section">
             <h2>Merchandise Ufficiale</h2>
             <div class="merchandise-content">
                 <div class="merchandise-image">
-                    <img src="/images/merchandise.jpg" alt="Delta Force MilSim Clan Merchandise">
+                    <img src="images/Merch.jpeg" alt="Delta Force MilSim Clan Merchandise">
                 </div>
                 <div class="merchandise-description">
                     <p>Indossa con orgoglio i colori del Delta Force MilSim Clan! La nostra linea di merchandise include t-shirt, felpe, cappelli e molto altro, tutti con il nostro logo iconico e design esclusivi ispirati alle nostre missioni.</p>
                     <a href="https://your-merch-store-url.com" class="cta-button" target="_blank" rel="noopener noreferrer">Acquista Ora</a>
                 </div>
             </div>
-        </section>
+        </div>
     </main>
 
     <div id="stats-widget" class="stats-widget closed">
-        <button id="close-widget" class="close-widget">×</button>
+        <button class="close-widget">×</button>
         <div class="widget-content">
             <h3>Statistiche Clan</h3>
             <div class="stat-item">
@@ -145,11 +145,7 @@
             </div>
         </div>
     </div>
-    <button id="reopen-widget" class="reopen-widget visible">
-        <i class="fas fa-chart-bar"></i>
-    </button>
-
-    
+    <button id="reopen-widget" class="hidden">📊</button>
 
     <footer>
         <div class="social-icons">
@@ -158,9 +154,7 @@
             <a href="https://www.youtube.com/@BrigataCorviNeri" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
             <a href="https://www.twitch.tv/brigatacorvinericlan" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitch"></i></a>
         </div>
-        <p>&copy; 2024 Delta Force MilSim Clan. Tutti i diritti riservati.</p>
+        <p>© 2024 Delta Force MilSim Clan. Tutti i diritti riservati.</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>

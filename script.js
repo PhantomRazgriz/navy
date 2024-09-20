@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const reopenWidgetBtn = document.getElementById('reopen-widget');
     const menuToggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('nav');
+    const body = document.body;
 
     // Funzione per evidenziare il link attivo nella navbar
     function highlightActiveNavLink() {
@@ -59,8 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Chiudi il menu mobile se aperto
             if (nav.classList.contains('open')) {
-                nav.classList.remove('open');
-                menuToggle.classList.remove('active');
+                closeMenu();
             }
         });
     });
@@ -86,10 +86,38 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Gestione del menu mobile
+    function openMenu() {
+        nav.classList.add('open');
+        menuToggle.classList.add('active');
+        body.classList.add('menu-open');
+        
+        document.querySelectorAll('nav ul li').forEach((item, index) => {
+            item.style.setProperty('--item-index', index);
+            setTimeout(() => {
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0)';
+            }, 50 * index);
+        });
+    }
+
+    function closeMenu() {
+        nav.classList.remove('open');
+        menuToggle.classList.remove('active');
+        body.classList.remove('menu-open');
+        
+        document.querySelectorAll('nav ul li').forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(-20px)';
+        });
+    }
+
     if (menuToggle) {
         menuToggle.addEventListener('click', function() {
-            nav.classList.toggle('open');
-            this.classList.toggle('active');
+            if (nav.classList.contains('open')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
         });
     }
 
@@ -100,11 +128,41 @@ document.addEventListener('DOMContentLoaded', function() {
             const isClickOnToggle = menuToggle.contains(event.target);
             
             if (!isClickInsideNav && !isClickOnToggle && nav.classList.contains('open')) {
-                nav.classList.remove('open');
-                menuToggle.classList.remove('active');
+                closeMenu();
             }
         }
     });
+
+    // Gestione del carosello
+    const carousel = document.querySelector('.carousel');
+    const slides = carousel ? carousel.querySelectorAll('.carousel-slide') : [];
+    const prevButton = document.querySelector('.carousel-button.prev');
+    const nextButton = document.querySelector('.carousel-button.next');
+    let currentSlide = 0;
+
+    function updateCarousel() {
+        if (carousel) {
+            carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateCarousel();
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        updateCarousel();
+    }
+
+    if (prevButton) prevButton.addEventListener('click', prevSlide);
+    if (nextButton) nextButton.addEventListener('click', nextSlide);
+
+    // Cambia slide automaticamente ogni 5 secondi
+    if (slides.length > 0) {
+        setInterval(nextSlide, 5000);
+    }
 
     // Gestione dei video preview per i loghi dei giochi
     const gameLogos = document.querySelectorAll('#sezioni .game-logo');
@@ -112,26 +170,27 @@ document.addEventListener('DOMContentLoaded', function() {
         const video = logo.querySelector('video');
         if (video) {
             const videoSource = video.querySelector('source');
-            const isArma3Video = videoSource.src.includes('We are Red Man');
+            const isArma3Video = videoSource.src.includes("video/arma3.mp4");
             const isSquadVideo = videoSource.src.includes('Trailer Sezione Squad');
 
-            logo.addEventListener('mouseenter', function() {
+            video.addEventListener('loadedmetadata', function() {
                 if (isArma3Video) {
                     video.currentTime = 75; // 1:15 (75 secondi) per Arma 3
                 } else if (isSquadVideo) {
                     video.currentTime = 35; // 35 secondi per Squad
-                } else {
-                    video.currentTime = 0; // Per altri video, inizia dall'inizio
                 }
+            });
+
+            logo.addEventListener('mouseenter', function() {
                 video.play();
             });
 
             logo.addEventListener('mouseleave', function() {
                 video.pause();
                 if (isArma3Video) {
-                    video.currentTime = 75; // Mantiene Arma 3 a 1:15
+                    video.currentTime = 75;
                 } else if (isSquadVideo) {
-                    video.currentTime = 35; // Mantiene Squad a 35 secondi
+                    video.currentTime = 35;
                 } else {
                     video.currentTime = 0;
                 }
@@ -139,19 +198,44 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Gestione del video di sfondo
-    const homepageVideo = document.querySelector('#video-container video');
-    if (homepageVideo) {
-        homepageVideo.addEventListener('loadedmetadata', function() {
-            this.currentTime = 35;
-        });
+    // Gestione del video responsive
+    function handleResponsiveVideo() {
+        const videoContainer = document.querySelector('#video-container');
+        const video = videoContainer ? videoContainer.querySelector('video') : null;
+        
+        if (video) {
+            const source = video.querySelector('source');
+            const mobileVideoUrl = '/path/to/mobile-video.mp4'; // Sostituisci con il percorso reale del video mobile
+            const desktopVideoUrl = '/path/to/desktop-video.mp4'; // Sostituisci con il percorso reale del video desktop
 
-        homepageVideo.addEventListener('timeupdate', function() {
-            if (this.currentTime >= this.duration - 0.5) {
-                this.currentTime = 35;
+            function setVideoSource() {
+                const newSource = window.innerWidth <= 768 ? mobileVideoUrl : desktopVideoUrl;
+                if (source.src !== newSource) {
+                    source.src = newSource;
+                    video.load();
+                }
             }
-        });
+
+            // Imposta la sorgente del video al caricamento iniziale
+            setVideoSource();
+
+            // Aggiorna la sorgente del video quando la finestra viene ridimensionata
+            window.addEventListener('resize', setVideoSource);
+
+            video.addEventListener('loadedmetadata', function() {
+                this.currentTime = 35;
+            });
+
+            video.addEventListener('timeupdate', function() {
+                if (this.currentTime >= this.duration - 0.5) {
+                    this.currentTime = 35;
+                }
+            });
+        }
     }
+
+    // Chiama la funzione per gestire il video responsive
+    handleResponsiveVideo();
 
     // Inizializzazione: evidenzia il link attivo al caricamento della pagina
     highlightActiveNavLink();
