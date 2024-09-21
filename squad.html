@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delta Force MilSim Clan - Squad</title>
+    <title>Squad - Delta Force MilSim Clan</title>
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <header>
@@ -12,43 +13,49 @@
             <div class="logo">
                 <img src="images/logo.png" alt="Logo Delta Force MilSim Clan">
             </div>
-            <button id="menu-toggle" class="menu-toggle">
+            <nav>
+                <ul>
+                    <li><a href="index.html#video-container">Home</a></li>
+                    <li><a href="index.html#chi-siamo">Chi Siamo</a></li>
+                    <li><a href="index.html#sezioni">Sezioni</a></li>
+                    <li><a href="index.html#requisiti">Requisiti</a></li>
+                    <li><a href="index.html#merchandise">Merchandise</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <nav id="main-nav">
-                <ul>
-                    <li><a href="#video-container">Home</a></li>
-                    <li><a href="#chi-siamo">Chi Siamo</a></li>
-                    <li><a href="#sezioni">Sezioni</a></li>
-                    <li><a href="#requisiti">Requisiti</a></li>
-                    
-                    
-                    
-                   
-                </ul>
-            </nav>
         </div>
     </header>
 
     <main>
         <section class="game-hero">
-            <img src="/api/placeholder/1920/500" alt="Squad Hero Image">
+            <img src="images/army3.jpg" alt="Squad Hero Image">
         </section>
 
         <section class="game-content">
             <div class="game-description">
                 <h1>Squad</h1>
-                <p>Dal 2019 Brigata Corvi Neri Multigaming e' presente nella community di SQUAD con l'obbiettivo di portare simulazione e immersivita' nel metodo di gioco di questo importante titolo tattico multigiocatore PvP. Cio che facciamo e' riprodurre sul campo di battaglia quante piu tattiche, tecniche e procedure possibili sempre restando nei limiti a cui il gioco stesso ci sottopone.</p>
-                <p>Per fare cio' svolgiamo numerosi addestramenti per le nuove reclute e regolari esercitazioni per i piu' veterani allo scopo di continuare a migliorare insieme aumentando l'affiatamento e l'intesa nel gioco di squadra. Il nostro obbiettivo e' la coordinazione, la comunicazione e la conquista degli obbiettivi della fazione mantenendo sempre disciplina e serieta'.</p>
+                <p>Dal 2019 Brigata Corvi Neri Multigaming è presente nella community di SQUAD con l'obiettivo di portare simulazione e immersività nel metodo di gioco di questo importante titolo tattico multigiocatore PvP. Ciò che facciamo è riprodurre sul campo di battaglia quante più tattiche, tecniche e procedure possibili sempre restando nei limiti a cui il gioco stesso ci sottopone.</p>
+                <p>Per fare ciò svolgiamo numerosi addestramenti per le nuove reclute e regolari esercitazioni per i più veterani allo scopo di continuare a migliorare insieme aumentando l'affiatamento e l'intesa nel gioco di squadra. Il nostro obiettivo è la coordinazione, la comunicazione e la conquista degli obiettivi della fazione mantenendo sempre disciplina e serietà.</p>
             </div>
+
             <div class="carousel-container">
                 <div class="carousel">
-                    <img src="/api/placeholder/600/400" alt="Squad Screenshot 1">
-                    <img src="/api/placeholder/600/400" alt="Squad Screenshot 2">
-                    <img src="/api/placeholder/600/400" alt="Squad Screenshot 3">
-                    <img src="/api/placeholder/600/400" alt="Squad Screenshot 4">
+                    <div class="carousel-slide">
+                        <img src="images/army.png" alt="Squad Screenshot 1">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/army1.jpg" alt="Squad Screenshot 2">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/army2.jpg" alt="Squad Screenshot 3">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/army4.jpg" alt="Squad Screenshot 4">
+                    </div>
                 </div>
                 <button class="carousel-button prev">&lt;</button>
                 <button class="carousel-button next">&gt;</button>
@@ -56,10 +63,36 @@
         </section>
     </main>
 
+    <div id="stats-widget" class="stats-widget closed">
+        <button class="close-widget">×</button>
+        <div class="widget-content">
+            <h3>Statistiche Clan</h3>
+            <div class="stat-item">
+                <span class="stat-label">Membri Attivi:</span>
+                <span id="active-members" class="stat-value">150</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Reclutamenti (Squad):</span>
+                <span id="squad-recruitment" class="stat-value">APERTI</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Reclutamenti (ArmaIII):</span>
+                <span id="arma-recruitment" class="stat-value">APERTI</span>
+            </div>
+        </div>
+    </div>
+    <button id="reopen-widget">📊</button>
+
     <footer>
-        <p>&copy; 2024 Delta Force MilSim Clan. Tutti i diritti riservati.</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/bcn_multigamingclan" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/bcnmultigamingteam" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.youtube.com/@BrigataCorviNeri" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.twitch.tv/brigatacorvinericlan" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitch"></i></a>
+        </div>
+        <p>© 2024 Delta Force MilSim Clan. Tutti i diritti riservati.</p>
     </footer>
 
-    <script src="game-pages.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
