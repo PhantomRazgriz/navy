@@ -267,6 +267,7 @@ body::before {
 #sezioni {
     text-align: center;
     padding: 4rem 2rem;
+    border: 1px solid rgba(255, 85, 0, 0.3);
 }
 
 .game-logos {
@@ -465,6 +466,8 @@ body::before {
     border-radius: 8px;
     margin-bottom: 2rem;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 85, 0, 0.3);
+
 }
 
 .merchandise-content {
@@ -541,6 +544,8 @@ body::before {
     border-radius: 8px;
     margin-bottom: 2rem;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 85, 0, 0.3);
+
 }
 
 .game-description h1 {
