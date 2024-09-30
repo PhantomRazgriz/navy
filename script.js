@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Aggiorna le statistiche (esempio)
     const activeMembersElement = document.getElementById('active-members');
     if (activeMembersElement) {
-        activeMembersElement.textContent = '150';
+        activeMembersElement.textContent = '21';
     }
 
     // Gestione del video responsive
